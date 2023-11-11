@@ -40,4 +40,18 @@
 
     @if $breakpoint == big-desktop
         @media (min-width: 112.5em)//1800px
-            @content
+            @content 
+
+
+@mixin maxmedia($px)
+    $em: ($px / 16) * 1em
+
+    @media (max-width: $em)
+        @content
+        
+@mixin minmedia($px)
+    $em: ($px / 16) * 1em
+
+    @media (min-width: $em)
+        @content
+
