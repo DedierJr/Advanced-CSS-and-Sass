@@ -7,6 +7,12 @@ html
     // Isso define o que é 1rem
     font-size: 62.5%  // 1 rem = 10px; 10px/16px = 62.5%
 
+    @include maxmedia(505)
+        font-size: 37.5%
+
+    @include respond(phone)
+        font-size: 43.75%
+
     @include respond(tab-land)  // width < 1200?
         font-size: 56.25%  // 1 rem = 9px, 9/16 = 50%
 
