@@ -6,6 +6,11 @@
 
     min-height: 50rem
 
+    @include maxmedia(1200)
+        margin: 0
+        max-width: 100%
+        max-height: 100%
+
 .header
     font-size: 1.4rem
     height: 7rem
@@ -16,8 +21,16 @@
     justify-content: space-between
     align-items: center
 
+    @include maxmedia(500)
+        flex-wrap: wrap
+        align-content: space-around
+        height: 11rem
+
 .content
     display: flex
+
+    @include maxmedia(900)
+        flex-direction: column
 
 
 .sidebar
@@ -41,12 +54,26 @@
     background-origin: var(--color-grey-light-1)
     border-bottom: var(--line)
 
+    @include maxmedia(900)
+        padding: 3rem
+
+    @include maxmedia(600)
+        flex-direction: column
+
 .description
     background-color: white
     box-shadow: 0 2rem 5rem rgba(0, 0, 0, .06)
     padding: 3rem
     flex: 0 0 60%
-    margin-right: 1.4rem
+    margin-right: 4.5rem
+
+    @include maxmedia(900)
+        padding: 2rem
+        margin-right: 3rem
+
+    @include maxmedia(600)
+        margin-right: 0
+        margin-bottom: 3rem
 
 .user-reviews
     flex: 1

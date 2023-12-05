@@ -16,7 +16,18 @@
     --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .06)
 
     --line: 1px solid var(--color-grey-light-2)
-    
+
+@mixin maxmedia($px)
+    $em: ($px / 16) * 1em
+
+    @media only screen and (max-width: $em)
+        @content
+        
+@mixin minmedia($px)
+    $em: ($px / 16) * 1em
+
+    @media only screen and (min-width: $em)
+        @content
 
 *
     margin: 0
@@ -28,6 +39,9 @@
 html
     box-sizing: border-box
     font-size: 62.5% //1rem = 10px, 10px/16px=  62.5%
+
+    @include maxmedia(1100)
+        font-size: 50%
 
 body
     font-family: 'Open Sans', sans-serif
